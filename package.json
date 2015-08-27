@@ -11,6 +11,7 @@
   "dependencies": {
     "easyimage": "^2.1.0",
     "express": "^4.13.3",
+    "flickrapi": "^0.3.36",
     "request": "^2.61.0"
   }
 }
