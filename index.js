@@ -38,7 +38,7 @@ function handler (width, height, req, res) {
     return
   }
   easyimg.resize({
-       src:'horse.jpg', dst:'./tmp/'+width+'x'+height+'.jpg',
+       src:'public/img/intro-bg.png', dst:'./tmp/'+width+'x'+height+'.png',
        width: width, height: height,
        cropwidth:width, cropheight:height,
        ignoreAspectRatio: true,
@@ -57,7 +57,7 @@ function handler (width, height, req, res) {
 }
 
 function errorHandler (req, res) {
-  res.sendFile('error_horse.jpg', { root: __dirname })
+  res.sendFile('public/img/errorhorse.jpg', { root: __dirname })
 }
 
 var server = app.listen(app.get('port'), function () {
