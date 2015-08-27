@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var Flickr = require("flickrapi");
+var myFlickrKey=process.env.SpaceHorse_Flickr_Key;
 
 app.set('port', (process.env.PORT || 3000));
 
@@ -107,7 +108,7 @@ function smartGetPicture(searchText, cb) {
     //testing replacement
     var flickrRandomImageURL;
     var flickrOptions = {
-        api_key: "9cf527bef89cfed17e94d77d6234ad31"
+        api_key: myFlickrKey
     };
     Flickr.tokenOnly(flickrOptions, function (error, flickr) {
         // we can now use "flickr" as our API object,
