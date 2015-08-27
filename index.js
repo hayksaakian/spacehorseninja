@@ -38,7 +38,7 @@ function handler (width, height, req, res) {
     return
   }
   easyimg.resize({
-       src:'public/img/intro-bg.png', dst:'./tmp/'+width+'x'+height+'.png',
+       src:'public/img/intro-bg.jpg', dst:'./tmp/'+width+'x'+height+'.png',
        width: width, height: height,
        cropwidth:width, cropheight:height,
        ignoreAspectRatio: true,
