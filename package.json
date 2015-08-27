@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "easyimage": "^2.1.0",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "request": "^2.61.0"
   }
 }
