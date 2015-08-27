@@ -15,8 +15,8 @@ app.get('/', function (req, res) {
   handler(500, 100, req, res)
 });
 
-app.get('/:height/:width', function(req, res){
-  handler(req.params.height, req.params.width, req, res)
+app.get('/:width/:height', function(req, res){
+  handler(req.params.width, req.params.height, req, res)
 })
 
 app.get('/:length', function(req, res){
@@ -30,16 +30,16 @@ app.get('/:length', function(req, res){
 })
 
 
-function handler (height, width, req, res) {
+function handler (width, height, req, res) {
   if (height > max_size || width > max_size) {
     errorHandler(req, res)
     return
   }
-  easyimg.resize({
+  easyimg.thumbnail({
        src:'horse.jpg', dst:'./tmp/'+width+'x'+height+'.jpg',
        width: width, height: height,
-       cropwidth:width, cropheight:height,
-       ignoreAspectRatio: true,
+       //cropwidth:width, cropheight:height,
+       //ignoreAspectRatio: true,
        x:0, y:0
     }).then(
     function(image) {
