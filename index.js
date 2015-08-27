@@ -86,7 +86,10 @@ function getPicture(tags, cb){
     "https://farm3.staticflickr.com/2435/3539592423_9c05fa3f3d.jpg",
     "https://farm6.staticflickr.com/5518/10178207295_85ecb7a2df.jpg",
     "https://farm6.staticflickr.com/5667/20709506288_56bc1482e3.jpg",
-    "https://farm6.staticflickr.com/5653/20909257771_21dae0c6f8.jpg"
+    "https://farm6.staticflickr.com/5653/20909257771_21dae0c6f8.jpg",
+    "https://farm6.staticflickr.com/5494/12583323674_021b896024.jpg",
+    "https://farm9.staticflickr.com/8134/8700183681_fc8e3939cb.jpg",
+    "https://farm4.staticflickr.com/3935/15022534534_0ef70e7ef6.jpg"
   ]
 
   var randomIndex = Math.floor(Math.random() * list.length);
