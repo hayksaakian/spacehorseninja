@@ -47,7 +47,7 @@ function handler (height, width, req, res) {
   );
 }
 
-var server = app.listen(3app.get('port'), function () {
+var server = app.listen(app.get('port'), function () {
   var host = server.address().address;
   var port = server.address().port;
 
