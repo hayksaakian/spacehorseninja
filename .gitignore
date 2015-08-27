@@ -13,3 +13,9 @@ results
 build
 
 node_modules
+
+tmp
+output
+
+.DS_Store
+
