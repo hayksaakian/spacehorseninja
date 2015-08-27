@@ -1,12 +1,14 @@
 var express = require('express');
 var app = express();
 
-var max_size = 2400
 
 app.set('port', (process.env.PORT || 3000));
 
 var easyimg = require('easyimage');
 
+app.use(express.static('public'));
+
+var max_size = 2400
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -35,11 +37,11 @@ function handler (width, height, req, res) {
     errorHandler(req, res)
     return
   }
-  easyimg.thumbnail({
+  easyimg.resize({
        src:'horse.jpg', dst:'./tmp/'+width+'x'+height+'.jpg',
        width: width, height: height,
-       //cropwidth:width, cropheight:height,
-       //ignoreAspectRatio: true,
+       cropwidth:width, cropheight:height,
+       ignoreAspectRatio: true,
        x:0, y:0
     }).then(
     function(image) {
