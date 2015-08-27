@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 
+var max_size = 2400
+
 app.set('port', (process.env.PORT || 3000));
 
 var easyimg = require('easyimage');
@@ -29,6 +31,10 @@ app.get('/:length', function(req, res){
 
 
 function handler (height, width, req, res) {
+  if (height > max_size || width > max_size) {
+    errorHandler(req, res)
+    return
+  }
   easyimg.resize({
        src:'horse.jpg', dst:'./tmp/'+width+'x'+height+'.jpg',
        width: width, height: height,
@@ -42,9 +48,14 @@ function handler (height, width, req, res) {
       res.sendFile(image.path, { root: __dirname })
     },
     function (err) {
+      errorHandler(req, res)
       console.log(err);
     }
   );
+}
+
+function errorHandler (req, res) {
+  res.sendFile('error_horse.jpg', { root: __dirname })
 }
 
 var server = app.listen(app.get('port'), function () {
